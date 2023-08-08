@@ -9,12 +9,14 @@
 /* Begin PBXBuildFile section */
 		C98F19B92A82CC6B002BF99F /* BennettsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98F19B82A82CC6B002BF99F /* BennettsApp.swift */; };
 		C98F19BB2A82CC6B002BF99F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98F19BA2A82CC6B002BF99F /* ContentView.swift */; };
-		C98F19BD2A82CC6B002BF99F /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98F19BC2A82CC6B002BF99F /* Item.swift */; };
 		C98F19BF2A82CC6E002BF99F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C98F19BE2A82CC6E002BF99F /* Assets.xcassets */; };
 		C98F19C22A82CC6E002BF99F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C98F19C12A82CC6E002BF99F /* Preview Assets.xcassets */; };
 		C98F19CE2A82CC6E002BF99F /* BennettsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98F19CD2A82CC6E002BF99F /* BennettsTests.swift */; };
 		C98F19D82A82CC6E002BF99F /* BennettsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98F19D72A82CC6E002BF99F /* BennettsUITests.swift */; };
 		C98F19DA2A82CC6E002BF99F /* BennettsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98F19D92A82CC6E002BF99F /* BennettsUITestsLaunchTests.swift */; };
+		C98F19E82A82CE27002BF99F /* ImageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98F19E72A82CE27002BF99F /* ImageContentView.swift */; };
+		C98F19EB2A82F57C002BF99F /* BSAsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98F19EA2A82F57C002BF99F /* BSAsyncImage.swift */; };
+		C98F19F42A82F85B002BF99F /* URL+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98F19F32A82F85B002BF99F /* URL+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +40,6 @@
 		C98F19B52A82CC6B002BF99F /* Bennetts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bennetts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C98F19B82A82CC6B002BF99F /* BennettsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BennettsApp.swift; sourceTree = "<group>"; };
 		C98F19BA2A82CC6B002BF99F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		C98F19BC2A82CC6B002BF99F /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		C98F19BE2A82CC6E002BF99F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C98F19C12A82CC6E002BF99F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C98F19C32A82CC6E002BF99F /* Bennetts.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Bennetts.entitlements; sourceTree = "<group>"; };
@@ -48,6 +49,9 @@
 		C98F19D32A82CC6E002BF99F /* BennettsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BennettsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C98F19D72A82CC6E002BF99F /* BennettsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BennettsUITests.swift; sourceTree = "<group>"; };
 		C98F19D92A82CC6E002BF99F /* BennettsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BennettsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C98F19E72A82CE27002BF99F /* ImageContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageContentView.swift; sourceTree = "<group>"; };
+		C98F19EA2A82F57C002BF99F /* BSAsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSAsyncImage.swift; sourceTree = "<group>"; };
+		C98F19F32A82F85B002BF99F /* URL+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,9 +102,11 @@
 		C98F19B72A82CC6B002BF99F /* Bennetts */ = {
 			isa = PBXGroup;
 			children = (
+				C98F19F02A82F831002BF99F /* Extensions */,
+				C98F19E92A82F560002BF99F /* Components */,
+				C98F19E62A82CE07002BF99F /* View */,
 				C98F19B82A82CC6B002BF99F /* BennettsApp.swift */,
 				C98F19BA2A82CC6B002BF99F /* ContentView.swift */,
-				C98F19BC2A82CC6B002BF99F /* Item.swift */,
 				C98F19BE2A82CC6E002BF99F /* Assets.xcassets */,
 				C98F19C32A82CC6E002BF99F /* Bennetts.entitlements */,
 				C98F19C42A82CC6E002BF99F /* Info.plist */,
@@ -132,6 +138,30 @@
 				C98F19D92A82CC6E002BF99F /* BennettsUITestsLaunchTests.swift */,
 			);
 			path = BennettsUITests;
+			sourceTree = "<group>";
+		};
+		C98F19E62A82CE07002BF99F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C98F19E72A82CE27002BF99F /* ImageContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C98F19E92A82F560002BF99F /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				C98F19EA2A82F57C002BF99F /* BSAsyncImage.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		C98F19F02A82F831002BF99F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C98F19F32A82F85B002BF99F /* URL+.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,8 +294,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C98F19F42A82F85B002BF99F /* URL+.swift in Sources */,
 				C98F19BB2A82CC6B002BF99F /* ContentView.swift in Sources */,
-				C98F19BD2A82CC6B002BF99F /* Item.swift in Sources */,
+				C98F19E82A82CE27002BF99F /* ImageContentView.swift in Sources */,
+				C98F19EB2A82F57C002BF99F /* BSAsyncImage.swift in Sources */,
 				C98F19B92A82CC6B002BF99F /* BennettsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
