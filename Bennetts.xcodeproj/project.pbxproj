@@ -17,6 +17,8 @@
 		C98F19E82A82CE27002BF99F /* ImageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98F19E72A82CE27002BF99F /* ImageContentView.swift */; };
 		C98F19EB2A82F57C002BF99F /* BSAsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98F19EA2A82F57C002BF99F /* BSAsyncImage.swift */; };
 		C98F19F42A82F85B002BF99F /* URL+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98F19F32A82F85B002BF99F /* URL+.swift */; };
+		C98F19F62A83009A002BF99F /* ProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98F19F52A83009A002BF99F /* ProfileImageView.swift */; };
+		C98F19F82A8300BF002BF99F /* LikeCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98F19F72A8300BF002BF99F /* LikeCountView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,8 @@
 		C98F19E72A82CE27002BF99F /* ImageContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageContentView.swift; sourceTree = "<group>"; };
 		C98F19EA2A82F57C002BF99F /* BSAsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSAsyncImage.swift; sourceTree = "<group>"; };
 		C98F19F32A82F85B002BF99F /* URL+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+.swift"; sourceTree = "<group>"; };
+		C98F19F52A83009A002BF99F /* ProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageView.swift; sourceTree = "<group>"; };
+		C98F19F72A8300BF002BF99F /* LikeCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeCountView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +156,8 @@
 			isa = PBXGroup;
 			children = (
 				C98F19EA2A82F57C002BF99F /* BSAsyncImage.swift */,
+				C98F19F52A83009A002BF99F /* ProfileImageView.swift */,
+				C98F19F72A8300BF002BF99F /* LikeCountView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -294,6 +300,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C98F19F62A83009A002BF99F /* ProfileImageView.swift in Sources */,
+				C98F19F82A8300BF002BF99F /* LikeCountView.swift in Sources */,
 				C98F19F42A82F85B002BF99F /* URL+.swift in Sources */,
 				C98F19BB2A82CC6B002BF99F /* ContentView.swift in Sources */,
 				C98F19E82A82CE27002BF99F /* ImageContentView.swift in Sources */,

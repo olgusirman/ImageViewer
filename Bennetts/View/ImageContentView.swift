@@ -14,10 +14,13 @@ struct ImageContentView: View {
             ScrollView(.horizontal) {
                 LazyHStack {
                     ForEach(0..<20) { i in
-                        BSAsyncImage(url: .sampleImage)
-                            .frame(
-                                maxWidth: geometry.size.width,
-                                maxHeight: geometry.size.height)
+                        VStack {
+                            BSAsyncImage(url: .sampleImage)
+                                .frame(
+                                    maxWidth: geometry.size.width,
+                                    maxHeight: geometry.size.height)
+                            descriptionView
+                        }
                     }
                 }
                 .scrollTargetLayout()
@@ -25,6 +28,21 @@ struct ImageContentView: View {
             .scrollTargetBehavior(.viewAligned)
         })
     }
+
+    var descriptionView: some View {
+        HStack(alignment: .firstTextBaseline) {
+            VStack() {
+                ProfileImageView()
+            }
+            Spacer()
+            VStack() {
+                LikeCountView()
+            }
+        }
+        .padding()
+        .background(.thinMaterial)
+    }
+
 }
 
 #Preview {

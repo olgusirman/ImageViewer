@@ -1,0 +1,23 @@
+//
+//  LikeCountView.swift
+//  Bennetts
+//
+//  Created by Olgu SIRMAN on 09/08/2023.
+//
+
+import SwiftUI
+
+struct LikeCountView: View {
+    var body: some View {
+        VStack(spacing: 8) {
+            Image(systemName: "suit.heart")
+                .font(.title)
+            Text("100k")
+                .font(.caption.bold())
+        }
+    }
+}
+
+#Preview {
+    LikeCountView()
+}
