@@ -19,6 +19,11 @@
 		C98F19F42A82F85B002BF99F /* URL+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98F19F32A82F85B002BF99F /* URL+.swift */; };
 		C98F19F62A83009A002BF99F /* ProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98F19F52A83009A002BF99F /* ProfileImageView.swift */; };
 		C98F19F82A8300BF002BF99F /* LikeCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98F19F72A8300BF002BF99F /* LikeCountView.swift */; };
+		C98F19FC2A8301F8002BF99F /* UnsplashPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98F19FB2A8301F8002BF99F /* UnsplashPhoto.swift */; };
+		C98F19FE2A830213002BF99F /* UnsplashPhotoExif.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98F19FD2A830213002BF99F /* UnsplashPhotoExif.swift */; };
+		C98F1A002A830229002BF99F /* UnsplashUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98F19FF2A830229002BF99F /* UnsplashUser.swift */; };
+		C98F1A022A8302E9002BF99F /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98F1A012A8302E9002BF99F /* Color+.swift */; };
+		C98F1A042A830338002BF99F /* Dictionary+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98F1A032A830338002BF99F /* Dictionary+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +61,11 @@
 		C98F19F32A82F85B002BF99F /* URL+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+.swift"; sourceTree = "<group>"; };
 		C98F19F52A83009A002BF99F /* ProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageView.swift; sourceTree = "<group>"; };
 		C98F19F72A8300BF002BF99F /* LikeCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeCountView.swift; sourceTree = "<group>"; };
+		C98F19FB2A8301F8002BF99F /* UnsplashPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashPhoto.swift; sourceTree = "<group>"; };
+		C98F19FD2A830213002BF99F /* UnsplashPhotoExif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashPhotoExif.swift; sourceTree = "<group>"; };
+		C98F19FF2A830229002BF99F /* UnsplashUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashUser.swift; sourceTree = "<group>"; };
+		C98F1A012A8302E9002BF99F /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
+		C98F1A032A830338002BF99F /* Dictionary+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +116,7 @@
 		C98F19B72A82CC6B002BF99F /* Bennetts */ = {
 			isa = PBXGroup;
 			children = (
+				C98F19FA2A8301D9002BF99F /* Model */,
 				C98F19F02A82F831002BF99F /* Extensions */,
 				C98F19E92A82F560002BF99F /* Components */,
 				C98F19E62A82CE07002BF99F /* View */,
@@ -166,8 +177,20 @@
 			isa = PBXGroup;
 			children = (
 				C98F19F32A82F85B002BF99F /* URL+.swift */,
+				C98F1A012A8302E9002BF99F /* Color+.swift */,
+				C98F1A032A830338002BF99F /* Dictionary+.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C98F19FA2A8301D9002BF99F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C98F19FB2A8301F8002BF99F /* UnsplashPhoto.swift */,
+				C98F19FD2A830213002BF99F /* UnsplashPhotoExif.swift */,
+				C98F19FF2A830229002BF99F /* UnsplashUser.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,7 +328,12 @@
 				C98F19F42A82F85B002BF99F /* URL+.swift in Sources */,
 				C98F19BB2A82CC6B002BF99F /* ContentView.swift in Sources */,
 				C98F19E82A82CE27002BF99F /* ImageContentView.swift in Sources */,
+				C98F1A042A830338002BF99F /* Dictionary+.swift in Sources */,
+				C98F19FE2A830213002BF99F /* UnsplashPhotoExif.swift in Sources */,
+				C98F1A002A830229002BF99F /* UnsplashUser.swift in Sources */,
 				C98F19EB2A82F57C002BF99F /* BSAsyncImage.swift in Sources */,
+				C98F1A022A8302E9002BF99F /* Color+.swift in Sources */,
+				C98F19FC2A8301F8002BF99F /* UnsplashPhoto.swift in Sources */,
 				C98F19B92A82CC6B002BF99F /* BennettsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
