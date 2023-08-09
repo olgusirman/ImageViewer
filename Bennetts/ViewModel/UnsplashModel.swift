@@ -10,7 +10,7 @@ import Foundation
 actor UnsplashModel: ObservableObject {
     @Published @MainActor private(set) var imageFeed: [UnsplashPhoto] = []
 
-    static let clientId = "xlLdFP_MhrG4gzSUd2zbADPlmR9f8AJnt-21xEd7Fzk"
+    static let clientId = "xg4tYnJNff0NN4Gf5cK2gbbNHBF6T-3N5QOm2RT-p1I"
 
     nonisolated func loadImages() async throws {
         await MainActor.run {

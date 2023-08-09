@@ -10,6 +10,7 @@ import SwiftUI
 struct ImageContentView: View {
 
     @EnvironmentObject var model: UnsplashModel
+    @EnvironmentObject var navigationModel: NavigationModel
 
     @State private var isDisplayingError = false
     @State private var lastErrorMessage = "None" {
@@ -18,27 +19,38 @@ struct ImageContentView: View {
         }
     }
 
+    @State private var navigate = false
+
     var body: some View {
-        GeometryReader(content: { geometry in
-            ScrollView(.horizontal) {
-                HStack {
-                    ForEach(model.imageFeed) { image in
-                        ZStack {
-                            BSAsyncImage(url: image.urls[.regular])
-                                .frame(
-                                    maxWidth: geometry.size.width
-                                )
-                            VStack (alignment: .center) {
-                                Spacer()
-                                ImageContentDescriptionView(userDisplayName: image.user.displayName, userProfileImage: image.user.profileImage[.small], likeCount: image.user.totalLikes)
+        NavigationStack(path: $navigationModel.photoPath) {
+            GeometryReader(content: { geometry in
+                ScrollView(.horizontal) {
+                    HStack {
+                        ForEach(model.imageFeed) { image in
+                            ZStack {
+                                NavigationLink(value: image) {
+                                    BSAsyncImage(url: image.urls[.regular])
+                                        .frame(
+                                            maxWidth: geometry.size.width
+                                        )
+                                }
+                                VStack {
+                                    Spacer()
+                                    ImageContentDescriptionView(userDisplayName: image.user.displayName,
+                                                                userProfileImage: image.user.profileImage[.small],
+                                                                likeCount: image.user.totalLikes)
+                                }
                             }
                         }
                     }
+                    .scrollTargetLayout()
                 }
-                .scrollTargetLayout()
-            }
-            .scrollTargetBehavior(.viewAligned)
-        })
+                .scrollTargetBehavior(.viewAligned)
+                .navigationDestination(for: UnsplashPhoto.self) { photo in
+                    PhotoDetailView(photo: photo)
+                }
+            })
+        }
         .task {
             guard model.imageFeed.isEmpty else { return }
             Task {

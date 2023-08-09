@@ -40,6 +40,7 @@ public struct UnsplashPhoto: Codable, Identifiable {
     public let likesCount: Int
     public let downloadsCount: Int?
     public let viewsCount: Int?
+    public let imageDescription: String?
 
     private enum CodingKeys: String, CodingKey {
         case identifier = "id"
@@ -53,11 +54,13 @@ public struct UnsplashPhoto: Codable, Identifiable {
         case likesCount = "likes"
         case downloadsCount = "downloads"
         case viewsCount = "views"
+        case imageDescription = "description"
     }
 
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         identifier = try container.decode(String.self, forKey: .identifier)
+        imageDescription = try container.decodeIfPresent(String.self, forKey: .imageDescription)
         height = try container.decode(CGFloat.self, forKey: .height)
         width = try container.decode(CGFloat.self, forKey: .width)
 
@@ -79,6 +82,7 @@ public struct UnsplashPhoto: Codable, Identifiable {
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(identifier, forKey: .identifier)
+        try container.encodeIfPresent(imageDescription, forKey: .imageDescription)
         try container.encode(height, forKey: .height)
         try container.encode(width, forKey: .width)
         try? container.encode(color?.hexString, forKey: .color)
@@ -91,4 +95,18 @@ public struct UnsplashPhoto: Codable, Identifiable {
         try? container.encode(viewsCount, forKey: .viewsCount)
     }
 
+}
+
+extension UnsplashPhoto: Equatable {
+
+    public static func == (lhs: UnsplashPhoto, rhs: UnsplashPhoto) -> Bool {
+        lhs.id == rhs.id
+    }
+}
+
+extension UnsplashPhoto: Hashable {
+
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
 }

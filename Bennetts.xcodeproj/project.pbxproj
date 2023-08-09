@@ -30,6 +30,9 @@
 		C98F1A0E2A83C046002BF99F /* ImageContentDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98F1A0D2A83C046002BF99F /* ImageContentDescriptionView.swift */; };
 		C98F1A102A83C604002BF99F /* Int+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98F1A0F2A83C604002BF99F /* Int+.swift */; };
 		C98F1A122A83D173002BF99F /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98F1A112A83D173002BF99F /* View+.swift */; };
+		C99E37B52A83F1DE00094B12 /* NavigationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99E37B42A83F1DE00094B12 /* NavigationModel.swift */; };
+		C99E37B72A83F5DF00094B12 /* PhotoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99E37B62A83F5DF00094B12 /* PhotoDetailView.swift */; };
+		C99E37BC2A8409D900094B12 /* TotalPhotosCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99E37BB2A8409D900094B12 /* TotalPhotosCountView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +81,9 @@
 		C98F1A0D2A83C046002BF99F /* ImageContentDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageContentDescriptionView.swift; sourceTree = "<group>"; };
 		C98F1A0F2A83C604002BF99F /* Int+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+.swift"; sourceTree = "<group>"; };
 		C98F1A112A83D173002BF99F /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
+		C99E37B42A83F1DE00094B12 /* NavigationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationModel.swift; sourceTree = "<group>"; };
+		C99E37B62A83F5DF00094B12 /* PhotoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailView.swift; sourceTree = "<group>"; };
+		C99E37BB2A8409D900094B12 /* TotalPhotosCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalPhotosCountView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +179,7 @@
 			children = (
 				C98F1A0D2A83C046002BF99F /* ImageContentDescriptionView.swift */,
 				C98F19E72A82CE27002BF99F /* ImageContentView.swift */,
+				C99E37B62A83F5DF00094B12 /* PhotoDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -183,6 +190,7 @@
 				C98F19EA2A82F57C002BF99F /* BSAsyncImage.swift */,
 				C98F19F52A83009A002BF99F /* ProfileImageView.swift */,
 				C98F19F72A8300BF002BF99F /* LikeCountView.swift */,
+				C99E37BB2A8409D900094B12 /* TotalPhotosCountView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -204,6 +212,7 @@
 		C98F19FA2A8301D9002BF99F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C99E37B42A83F1DE00094B12 /* NavigationModel.swift */,
 				C98F19FB2A8301F8002BF99F /* UnsplashPhoto.swift */,
 				C98F19FD2A830213002BF99F /* UnsplashPhotoExif.swift */,
 				C98F19FF2A830229002BF99F /* UnsplashUser.swift */,
@@ -350,6 +359,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C98F1A102A83C604002BF99F /* Int+.swift in Sources */,
+				C99E37BC2A8409D900094B12 /* TotalPhotosCountView.swift in Sources */,
 				C98F19F62A83009A002BF99F /* ProfileImageView.swift in Sources */,
 				C98F19F82A8300BF002BF99F /* LikeCountView.swift in Sources */,
 				C98F19F42A82F85B002BF99F /* URL+.swift in Sources */,
@@ -358,8 +368,10 @@
 				C98F19E82A82CE27002BF99F /* ImageContentView.swift in Sources */,
 				C98F1A072A83A38F002BF99F /* UnsplashModel.swift in Sources */,
 				C98F1A042A830338002BF99F /* Dictionary+.swift in Sources */,
+				C99E37B52A83F1DE00094B12 /* NavigationModel.swift in Sources */,
 				C98F19FE2A830213002BF99F /* UnsplashPhotoExif.swift in Sources */,
 				C98F1A002A830229002BF99F /* UnsplashUser.swift in Sources */,
+				C99E37B72A83F5DF00094B12 /* PhotoDetailView.swift in Sources */,
 				C98F19EB2A82F57C002BF99F /* BSAsyncImage.swift in Sources */,
 				C98F1A022A8302E9002BF99F /* Color+.swift in Sources */,
 				C98F1A0E2A83C046002BF99F /* ImageContentDescriptionView.swift in Sources */,

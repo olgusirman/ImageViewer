@@ -39,3 +39,18 @@ extension View {
         self.modifier(DeviceRotationViewModifier(action: action))
     }
 }
+
+extension Image {
+    func configureForProfile() -> some View {
+        self
+            .resizable()
+            .background(Material.regular)
+            .frame(width: 100, height: 100)
+            .aspectRatio(contentMode: .fit)
+            .clipShape(Circle())
+            .overlay {
+                Circle().stroke(.white, lineWidth: 4)
+            }
+            .shadow(radius: 7)
+    }
+}

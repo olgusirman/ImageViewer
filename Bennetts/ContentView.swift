@@ -10,10 +10,11 @@ import SwiftData
 
 struct ContentView: View {
 
+    @StateObject private var navigationModel = NavigationModel()
+
     var body: some View {
-        NavigationView {
-            ImageContentView()
-        }
+        ImageContentView()
+            .environmentObject(navigationModel)
     }
 }
 
