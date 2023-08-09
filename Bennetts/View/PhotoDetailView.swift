@@ -17,13 +17,28 @@ struct PhotoDetailView: View {
 
     private let bannerHeight: CGFloat = 300
 
+    private var ratio: CGFloat {
+        photo.width / photo.height
+    }
+
+    private var isPhotoRatioSupportsLandscape: Bool {
+        photo.width / photo.height > 1
+    }
+
     var bannerView: some View {
         AsyncImage(
             url: photo.urls[.regular],
             content: { image in
                 image
                     .resizable()
+                    .if(isPhotoRatioSupportsLandscape, transform: { view in
+                        view.aspectRatio(ratio, contentMode: .fit)
+                    })
+                    .if(!isPhotoRatioSupportsLandscape, transform: { view in
+                        view.aspectRatio(ratio, contentMode: .fill)
+                    })
                     .frame(height: bannerHeight)
+                    .clipped()
             },
             placeholder: {
                 Image(systemName: "photo")
@@ -74,7 +89,6 @@ struct PhotoDetailView: View {
                     TotalPhotosCountView(photosCount: user.totalPhotos)
                 }
                 .foregroundColor(.secondary)
-                
                 if let bio = photo.imageDescription {
                     Divider()
                     Text(bio)
