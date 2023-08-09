@@ -25,7 +25,7 @@ struct ImageContentView: View {
         NavigationStack(path: $navigationModel.photoPath) {
             GeometryReader(content: { geometry in
                 ScrollView(.horizontal) {
-                    HStack {
+                    HStack (spacing: 0) {
                         ForEach(model.imageFeed) { image in
                             ZStack {
                                 NavigationLink(value: image) {
@@ -39,13 +39,17 @@ struct ImageContentView: View {
                                     ImageContentDescriptionView(userDisplayName: image.user.displayName,
                                                                 userProfileImage: image.user.profileImage[.small],
                                                                 likeCount: image.user.totalLikes)
+                                    .padding([.bottom], 40)
+                                    .background(Material.thinMaterial)
                                 }
                             }
                         }
                     }
                     .scrollTargetLayout()
                 }
-                .scrollTargetBehavior(.viewAligned)
+                .edgesIgnoringSafeArea(.all)
+                .navigationBarTitleDisplayMode(.inline)
+                .scrollTargetBehavior(.viewAligned(limitBehavior: .never))
                 .navigationDestination(for: UnsplashPhoto.self) { photo in
                     PhotoDetailView(photo: photo)
                 }

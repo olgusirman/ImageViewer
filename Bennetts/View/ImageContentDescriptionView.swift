@@ -29,9 +29,6 @@ struct ImageContentDescriptionView: View {
         .onRotate { newOrientation in
             orientation = newOrientation
         }
-        .if(isLandscape) { view in
-            view.background(Material.regular)
-        }
     }
 }
 
