@@ -53,12 +53,10 @@ struct ImageContentView: View {
         }
         .task {
             guard model.imageFeed.isEmpty else { return }
-            Task {
-                do {
-                    try await model.loadImages()
-                } catch {
-                    lastErrorMessage = error.localizedDescription
-                }
+            do {
+                try await model.loadImages()
+            } catch {
+                lastErrorMessage = error.localizedDescription
             }
         }
         .alert("Error", isPresented: $isDisplayingError, actions: {
