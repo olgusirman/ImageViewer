@@ -30,8 +30,8 @@ public struct UnsplashPhoto: Codable, Identifiable {
     }
 
     public let identifier: String
-    public let height: Int
-    public let width: Int
+    public let height: CGFloat
+    public let width: CGFloat
     public let color: Color?
     public let exif: UnsplashPhotoExif?
     public let user: UnsplashUser
@@ -58,8 +58,8 @@ public struct UnsplashPhoto: Codable, Identifiable {
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         identifier = try container.decode(String.self, forKey: .identifier)
-        height = try container.decode(Int.self, forKey: .height)
-        width = try container.decode(Int.self, forKey: .width)
+        height = try container.decode(CGFloat.self, forKey: .height)
+        width = try container.decode(CGFloat.self, forKey: .width)
 
         if let hexString = try? container.decode(String.self, forKey: .color) {
             color = Color(hex: hexString)
