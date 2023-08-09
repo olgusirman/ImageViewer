@@ -11,9 +11,12 @@ import SwiftData
 @main
 struct BennettsApp: App {
 
+    private var model = UnsplashModel()
+
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(model)
         }
     }
 }

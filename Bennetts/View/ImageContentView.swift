@@ -9,17 +9,29 @@ import SwiftUI
 
 struct ImageContentView: View {
 
+    @EnvironmentObject var model: UnsplashModel
+
+    @State private var isDisplayingError = false
+    @State private var lastErrorMessage = "None" {
+        didSet {
+            isDisplayingError = true
+        }
+    }
+
     var body: some View {
         GeometryReader(content: { geometry in
             ScrollView(.horizontal) {
-                LazyHStack {
-                    ForEach(0..<20) { i in
-                        VStack {
-                            BSAsyncImage(url: .sampleImage)
+                HStack {
+                    ForEach(model.imageFeed) { image in
+                        ZStack {
+                            BSAsyncImage(url: image.urls[.regular])
                                 .frame(
-                                    maxWidth: geometry.size.width,
-                                    maxHeight: geometry.size.height)
-                            descriptionView
+                                    maxWidth: geometry.size.width
+                                )
+                            VStack (alignment: .center) {
+                                Spacer()
+                                ImageContentDescriptionView(userDisplayName: image.user.displayName, userProfileImage: image.user.profileImage[.small], likeCount: image.user.totalLikes)
+                            }
                         }
                     }
                 }
@@ -27,24 +39,20 @@ struct ImageContentView: View {
             }
             .scrollTargetBehavior(.viewAligned)
         })
-    }
-
-    var descriptionView: some View {
-        HStack(alignment: .firstTextBaseline) {
-            VStack() {
-                ProfileImageView()
-            }
-            Spacer()
-            VStack() {
-                LikeCountView()
+        .task {
+            guard model.imageFeed.isEmpty else { return }
+            Task {
+                do {
+                    try await model.loadImages()
+                } catch {
+                    lastErrorMessage = error.localizedDescription
+                }
             }
         }
-        .padding()
-        .background(.thinMaterial)
+        .alert("Error", isPresented: $isDisplayingError, actions: {
+            Button("Close", role: .cancel) { }
+        }, message: {
+            Text(lastErrorMessage)
+        })
     }
-
-}
-
-#Preview {
-    ImageContentView()
 }
