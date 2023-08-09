@@ -25,7 +25,7 @@ struct ImageContentView: View {
         NavigationStack(path: $navigationModel.photoPath) {
             GeometryReader(content: { geometry in
                 ScrollView(.horizontal) {
-                    HStack (spacing: 0) {
+                    HStack(spacing: 0) {
                         ForEach(model.imageFeed) { image in
                             ZStack {
                                 NavigationLink(value: image) {
