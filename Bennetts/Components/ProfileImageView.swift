@@ -8,19 +8,37 @@
 import SwiftUI
 
 struct ProfileImageView: View {
+
+    var name: String
+    var photoUrl: URL?
+
     var body: some View {
-        HStack(spacing: 16) {
-            Image(systemName: "person.crop.circle")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 44, height: 44)
-                .clipShape(Circle())
-            Text("Olgu SIRMAN")
+        HStack {
+            AsyncImage(
+                url: photoUrl,
+                transaction: Transaction(animation: .easeInOut)
+            ) { phase in
+                switch phase {
+                case .empty:
+                    ProgressView()
+                case .success(let image):
+                    image
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 44, height: 44)
+                        .clipShape(Circle())
+                case .failure:
+                    Image(systemName: "person.crop.circle")
+                @unknown default:
+                    EmptyView()
+                }
+            }
+            Text(name)
                 .font(.callout.bold())
         }
     }
 }
 
 #Preview {
-    ProfileImageView()
+    ProfileImageView(name: "Olgu SIRMAN", photoUrl: .sampleProfileImage)
 }

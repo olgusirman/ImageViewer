@@ -8,16 +8,22 @@
 import SwiftUI
 
 struct LikeCountView: View {
+    var likeCount: Int
+
+    var likeCountString: String {
+        likeCount.roundedWithAbbreviations
+    }
+
     var body: some View {
         VStack(spacing: 8) {
             Image(systemName: "suit.heart")
                 .font(.title)
-            Text("100k")
+            Text(likeCountString)
                 .font(.caption.bold())
         }
     }
 }
 
 #Preview {
-    LikeCountView()
+    LikeCountView(likeCount: 4234)
 }
