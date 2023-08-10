@@ -27,6 +27,7 @@ struct ProfileImageView: View {
                         .aspectRatio(contentMode: .fill)
                         .frame(width: 44, height: 44)
                         .clipShape(Circle())
+                        .accessibilityIdentifier("Profile Picture")
                 case .failure:
                     Image(systemName: "person.crop.circle")
                 @unknown default:

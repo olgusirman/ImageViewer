@@ -18,7 +18,9 @@ struct FeedImageView: View {
                     .frame(
                         maxWidth: maxWidth
                     )
+                    .accessibilityIdentifier("Feed Image Content")
             }
+            .accessibilityHint("Press for navigate to detail")
             VStack {
                 Spacer()
                 ImageContentDescriptionView(userDisplayName: image.user.displayName,

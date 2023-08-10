@@ -20,6 +20,7 @@ struct LikeCountView: View {
                 .font(.title)
             Text(likeCountString)
                 .font(.caption.bold())
+                .accessibilityIdentifier("Picture like count")
         }
     }
 }

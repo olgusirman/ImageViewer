@@ -43,6 +43,7 @@ struct PhotoDetailView: View {
                     })
                     .frame(height: bannerHeight)
                     .clipped()
+                    .accessibilityIdentifier("Selected Photo")
             },
             placeholder: {
                 Image(systemName: "photo")
@@ -58,6 +59,7 @@ struct PhotoDetailView: View {
             content: { image in
                 image
                     .configureForProfile()
+                    .accessibilityIdentifier("Profile Picture")
             },
             placeholder: {
                 Image(systemName: "person.crop.circle")
@@ -78,6 +80,7 @@ struct PhotoDetailView: View {
                 if let name = user.name {
                     Text(name)
                         .font(.title)
+                        .accessibilityIdentifier("username")
                 }
                 if let portfolioURL = user.portfolioURL?.absoluteString  {
                     HStack {
