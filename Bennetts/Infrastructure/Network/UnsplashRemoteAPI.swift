@@ -18,9 +18,9 @@ final class UnsplashRemoteAPIProvider: UnsplashRemoteAPI {
     private let router: UnsplashRouter<UnsplashEndpointType>
 
     // MARK: - Methods
-    public init(configProvider: ConfigProvider, session: URLSession) {
+    public init(configProvider: ConfigProvider, session: URLSession, decoder: JSONDecoder) {
         clientId = configProvider.getConfig(type: .network).clientID
-        router = UnsplashRouter<UnsplashEndpointType>(session: session)
+        router = UnsplashRouter<UnsplashEndpointType>(session: session, decoder: decoder)
     }
 
     func fetchImages() async throws -> [UnsplashPhoto] {
