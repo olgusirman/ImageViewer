@@ -23,7 +23,7 @@ final class UnsplashRemoteAPITests: XCTestCase {
     func testFetchImages() async throws {
         let images = try await stub.fetchImages()
 
-        XCTAssertEqual(images.first?.user.name, "Sergey Kotenev")
+        XCTAssertEqual(images.first?.user.name, "Olgu SIRMAN")
 
     }
 }

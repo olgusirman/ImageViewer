@@ -51,7 +51,7 @@ final class UnsplashRouterTests: XCTestCase {
 
         let photo: [UnsplashPhoto] = try await stub.request(.photos)
 
-        XCTAssertEqual(photo.first?.user.name, "Sergey Kotenev")
+        XCTAssertEqual(photo.first?.user.name, "Olgu SIRMAN")
     }
 
     func testRouter_whenResponseStatusCodeInvalid_emitCorrectError() async throws {

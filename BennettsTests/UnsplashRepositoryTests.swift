@@ -23,6 +23,6 @@ final class UnsplashRepositoryTests: XCTestCase {
     func testGetImages() async throws {
         let images = try await stub.getImages()
 
-        XCTAssertEqual(images.first?.user.name, "Sergey Kotenev")
+        XCTAssertEqual(images.first?.user.name, "Olgu SIRMAN")
     }
 }
