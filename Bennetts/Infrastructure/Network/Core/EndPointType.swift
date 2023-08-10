@@ -7,7 +7,7 @@
 
 import Foundation
 
-public typealias HTTPHeaders = [String:String]
+public typealias HTTPHeaders = [String: String]
 
 protocol EndPointType {
     var scheme: String { get }

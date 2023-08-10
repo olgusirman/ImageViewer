@@ -8,8 +8,8 @@
 import Foundation
 
 public class AppDependencyContainer {
-
     // MARK: Long-lived dependencies
+
     private let configProvider: ConfigProvider
     private let encoder = JSONEncoder()
     private let decoder = JSONDecoder()
@@ -17,12 +17,14 @@ public class AppDependencyContainer {
     private let session: URLSession
 
     // MARK: Init
+
     public init() {
         session = URLSession(configuration: .default)
         configProvider = ConfigManager()
     }
 
     // MARK: Inject Dependencies
+
     func makeUnsplashRepository() -> UnsplashRepository {
         let unsplashDataStore = makeUnsplashDataStore()
         let remoteAPI = UnsplashRemoteAPIProvider(configProvider: configProvider,
@@ -38,7 +40,6 @@ public class AppDependencyContainer {
 }
 
 extension AppDependencyContainer: UnsplashModelFactory {
-
     func makeUnsplashModel() -> UnsplashModel {
         let repository = makeUnsplashRepository()
         return UnsplashModel(repository: repository)
@@ -46,7 +47,6 @@ extension AppDependencyContainer: UnsplashModelFactory {
 }
 
 extension AppDependencyContainer: NavigationModelFactory {
-
     func makeNavigationModel() -> NavigationModel {
         NavigationModel()
     }

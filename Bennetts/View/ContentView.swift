@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ContentView: View {
-
     @EnvironmentObject var model: UnsplashModel
     @EnvironmentObject var navigationModel: NavigationModel
 
@@ -41,7 +40,6 @@ struct ContentView: View {
             })
         }
         .task {
-
             guard model.imageFeed.isEmpty, ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] == nil else { return }
             do {
                 try await model.loadImages()
@@ -50,7 +48,7 @@ struct ContentView: View {
             }
         }
         .alert("Error", isPresented: $isDisplayingError, actions: {
-            Button("Close", role: .cancel) { }
+            Button("Close", role: .cancel) {}
         }, message: {
             Text(lastErrorMessage)
         })

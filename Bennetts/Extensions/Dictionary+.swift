@@ -7,8 +7,8 @@
 
 import Foundation
 
-extension Dictionary {
-    public func convert<T, U>(_ transform: ((key: Key, value: Value)) throws -> (T, U)) rethrows -> [T: U] {
+public extension Dictionary {
+    func convert<T, U>(_ transform: ((key: Key, value: Value)) throws -> (T, U)) rethrows -> [T: U] {
         var dictionary = [T: U]()
         for (key, value) in self {
             let transformed = try transform((key, value))

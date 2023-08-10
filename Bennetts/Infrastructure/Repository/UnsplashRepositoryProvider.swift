@@ -8,13 +8,14 @@
 import Foundation
 
 public class UnsplashRepositoryProvider: UnsplashRepository {
-
     // MARK: - Properties
+
     let dataStore: UnsplashDataStore
     let remoteAPI: UnsplashRemoteAPI
     // TODO: MemoryCacheStore also can be inject here if needed
 
     // MARK: - Methods
+
     init(dataStore: UnsplashDataStore, remoteAPI: UnsplashRemoteAPI) {
         self.dataStore = dataStore
         self.remoteAPI = remoteAPI

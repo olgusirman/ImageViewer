@@ -9,7 +9,6 @@ import Foundation
 import SwiftUI
 
 public struct UnsplashPhoto: Codable, Identifiable {
-
     public var id: String {
         identifier
     }
@@ -88,24 +87,21 @@ public struct UnsplashPhoto: Codable, Identifiable {
         try? container.encode(color?.hexString, forKey: .color)
         try? container.encode(exif, forKey: .exif)
         try container.encode(user, forKey: .user)
-        try container.encode(urls.convert({ ($0.key.rawValue, $0.value.absoluteString) }), forKey: .urls)
-        try container.encode(links.convert({ ($0.key.rawValue, $0.value.absoluteString) }), forKey: .links)
+        try container.encode(urls.convert { ($0.key.rawValue, $0.value.absoluteString) }, forKey: .urls)
+        try container.encode(links.convert { ($0.key.rawValue, $0.value.absoluteString) }, forKey: .links)
         try container.encode(likesCount, forKey: .likesCount)
         try? container.encode(downloadsCount, forKey: .downloadsCount)
         try? container.encode(viewsCount, forKey: .viewsCount)
     }
-
 }
 
 extension UnsplashPhoto: Equatable {
-
     public static func == (lhs: UnsplashPhoto, rhs: UnsplashPhoto) -> Bool {
         lhs.id == rhs.id
     }
 }
 
 extension UnsplashPhoto: Hashable {
-
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }

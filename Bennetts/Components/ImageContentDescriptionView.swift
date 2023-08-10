@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ImageContentDescriptionView: View {
-
     var userDisplayName: String
     var userProfileImage: URL?
     var likeCount: Int
@@ -20,7 +19,7 @@ struct ImageContentDescriptionView: View {
     }
 
     var body: some View {
-        HStack() {
+        HStack {
             ProfileImageView(name: userDisplayName, photoUrl: userProfileImage)
             Spacer()
             LikeCountView(likeCount: likeCount)

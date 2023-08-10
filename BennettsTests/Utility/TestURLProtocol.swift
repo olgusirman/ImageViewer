@@ -8,22 +8,21 @@
 import Foundation
 
 public final class TestURLProtocol: URLProtocol {
-
     public typealias MockResponse = (URLRequest) -> (
         result: Result<Data, Error>, statusCode: Int?
     )
 
     public static var mockResponses: [URL: MockResponse] = [:]
 
-    public override class func canInit(with request: URLRequest) -> Bool {
+    override public class func canInit(with request: URLRequest) -> Bool {
         return request.url?.absoluteString == "https://api.sirman.com/photos/"
     }
 
-    public override class func canonicalRequest(for request: URLRequest) -> URLRequest {
+    override public class func canonicalRequest(for request: URLRequest) -> URLRequest {
         request
     }
 
-    public override func startLoading() {
+    override public func startLoading() {
         guard
             let responseBlock = TestURLProtocol.mockResponses[
                 request.url!.removingQueries
@@ -38,7 +37,7 @@ public final class TestURLProtocol: URLProtocol {
                 httpVersion: nil,
                 headerFields: nil
             )!
-            self.client?.urlProtocol(
+            client?.urlProtocol(
                 self,
                 didReceive: httpURLResponse,
                 cacheStoragePolicy: .notAllowed
@@ -55,7 +54,7 @@ public final class TestURLProtocol: URLProtocol {
         }
     }
 
-    public override func stopLoading() {}
+    override public func stopLoading() {}
 }
 
 extension URL {
@@ -63,8 +62,7 @@ extension URL {
         if var components = URLComponents(string: absoluteString) {
             components.query = nil
             return components.url ?? self
-        }
-        else {
+        } else {
             return self
         }
     }

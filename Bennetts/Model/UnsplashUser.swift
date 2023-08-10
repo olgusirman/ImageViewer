@@ -9,7 +9,6 @@ import Foundation
 
 /// A struct representing a user's public profile from the Unsplash API.
 public struct UnsplashUser: Codable {
-
     public enum ProfileImageSize: String, Codable {
         case small
         case medium
@@ -77,19 +76,19 @@ public struct UnsplashUser: Codable {
         try? container.encode(firstName, forKey: .firstName)
         try? container.encode(lastName, forKey: .lastName)
         try? container.encode(name, forKey: .name)
-        try container.encode(profileImage.convert({ ($0.key.rawValue, $0.value.absoluteString) }), forKey: .profileImage)
+        try container.encode(profileImage.convert { ($0.key.rawValue, $0.value.absoluteString) }, forKey: .profileImage)
         try? container.encode(bio, forKey: .bio)
-        try container.encode(links.convert({ ($0.key.rawValue, $0.value.absoluteString) }), forKey: .links)
+        try container.encode(links.convert { ($0.key.rawValue, $0.value.absoluteString) }, forKey: .links)
         try? container.encode(location, forKey: .location)
         try? container.encode(portfolioURL, forKey: .portfolioURL)
         try container.encode(totalCollections, forKey: .totalCollections)
         try container.encode(totalLikes, forKey: .totalLikes)
         try container.encode(totalPhotos, forKey: .totalPhotos)
     }
-
 }
 
 // MARK: - Convenience
+
 extension UnsplashUser {
     var displayName: String {
         if let name = name {
@@ -112,6 +111,7 @@ extension UnsplashUser {
 }
 
 // MARK: - Equatable
+
 extension UnsplashUser: Equatable {
     public static func == (lhs: UnsplashUser, rhs: UnsplashUser) -> Bool {
         return lhs.identifier == rhs.identifier
@@ -119,12 +119,13 @@ extension UnsplashUser: Equatable {
 }
 
 extension KeyedDecodingContainer {
-    func decode(_ type: [UnsplashUser.LinkKind: URL].Type, forKey key: Key) throws -> [UnsplashUser.LinkKind: URL] {
-        let urlsDictionary = try self.decode([String: String].self, forKey: key)
+    func decode(_: [UnsplashUser.LinkKind: URL].Type, forKey key: Key) throws -> [UnsplashUser.LinkKind: URL] {
+        let urlsDictionary = try decode([String: String].self, forKey: key)
         var result = [UnsplashUser.LinkKind: URL]()
         for (key, value) in urlsDictionary {
             if let kind = UnsplashUser.LinkKind(rawValue: key),
-               let url = URL(string: value) {
+               let url = URL(string: value)
+            {
                 result[kind] = url
             }
         }

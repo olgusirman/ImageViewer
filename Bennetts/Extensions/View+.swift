@@ -36,14 +36,13 @@ extension View {
 
 extension View {
     func onRotate(perform action: @escaping (UIDeviceOrientation) -> Void) -> some View {
-        self.modifier(DeviceRotationViewModifier(action: action))
+        modifier(DeviceRotationViewModifier(action: action))
     }
 }
 
 extension Image {
     func configureForProfile() -> some View {
-        self
-            .resizable()
+        resizable()
             .background(Material.regular)
             .frame(width: 100, height: 100)
             .aspectRatio(contentMode: .fit)

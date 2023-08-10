@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ProfileImageView: View {
-
     var name: String
     var photoUrl: URL?
 
@@ -21,7 +20,7 @@ struct ProfileImageView: View {
                 switch phase {
                 case .empty:
                     ProgressView()
-                case .success(let image):
+                case let .success(image):
                     image
                         .resizable()
                         .aspectRatio(contentMode: .fill)

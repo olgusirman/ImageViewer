@@ -5,11 +5,10 @@
 //  Created by Olgu SIRMAN on 10/08/2023.
 //
 
-import XCTest
 @testable import Bennetts
+import XCTest
 
 final class FileUnsplashCareTakerTests: XCTestCase {
-
     var stub: FileUnsplashCareTaker!
     var fileManager: FileManager!
     var encoder: JSONEncoder!
@@ -30,7 +29,6 @@ final class FileUnsplashCareTakerTests: XCTestCase {
     }
 
     func testCareTaker_whenSaveImages_getImagesBack() async throws {
-
         // Given
         let images: [Bennetts.UnsplashPhoto] = .mockDataStorePhotos
 

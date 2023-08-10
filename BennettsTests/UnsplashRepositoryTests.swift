@@ -5,11 +5,10 @@
 //  Created by Olgu SIRMAN on 10/08/2023.
 //
 
-import XCTest
 @testable import Bennetts
+import XCTest
 
 final class UnsplashRepositoryTests: XCTestCase {
-
     var stub: UnsplashRepository!
 
     override func setUpWithError() throws {

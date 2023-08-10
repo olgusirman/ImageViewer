@@ -8,7 +8,6 @@
 import Foundation
 
 public class FileUnsplashCareTaker: UnsplashDataStore {
-
     enum UnsplashDataStoreError: Error {
         case noDocumentDirectory
         case noData
@@ -16,6 +15,7 @@ public class FileUnsplashCareTaker: UnsplashDataStore {
     }
 
     // MARK: - Properties
+
     private var docsURL: URL? {
         return fileManager.urls(for: FileManager.SearchPathDirectory.documentDirectory,
                                 in: FileManager.SearchPathDomainMask.allDomainsMask).first
@@ -27,6 +27,7 @@ public class FileUnsplashCareTaker: UnsplashDataStore {
     private let path = "unsplashImages.json"
 
     // MARK: - Methods
+
     public init(fileManager: FileManager, encoder: JSONEncoder, decoder: JSONDecoder) {
         self.fileManager = fileManager
         self.encoder = encoder

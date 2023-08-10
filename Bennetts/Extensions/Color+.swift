@@ -5,8 +5,8 @@
 //  Created by Olgu SIRMAN on 09/08/2023.
 //
 
-import SwiftUI
 import Foundation
+import SwiftUI
 
 extension Color {
     init(hex: String) {
@@ -29,7 +29,7 @@ extension Color {
             .sRGB,
             red: Double(r) / 255,
             green: Double(g) / 255,
-            blue:  Double(b) / 255,
+            blue: Double(b) / 255,
             opacity: Double(a) / 255
         )
     }
@@ -47,7 +47,7 @@ extension UIColor {
         guard let components = cgColor.components else {
             return 1
         }
-        return components[cgColor.numberOfComponents-1]
+        return components[cgColor.numberOfComponents - 1]
     }
 
     convenience init(hexString: String) {
@@ -63,10 +63,10 @@ extension UIColor {
             chars = ["F", "F"] + chars
             fallthrough
         case 8:
-            alpha = CGFloat(strtoul(String(chars[0...1]), nil, 16)) / 255
-            red   = CGFloat(strtoul(String(chars[2...3]), nil, 16)) / 255
-            green = CGFloat(strtoul(String(chars[4...5]), nil, 16)) / 255
-            blue  = CGFloat(strtoul(String(chars[6...7]), nil, 16)) / 255
+            alpha = CGFloat(strtoul(String(chars[0 ... 1]), nil, 16)) / 255
+            red = CGFloat(strtoul(String(chars[2 ... 3]), nil, 16)) / 255
+            green = CGFloat(strtoul(String(chars[4 ... 5]), nil, 16)) / 255
+            blue = CGFloat(strtoul(String(chars[6 ... 7]), nil, 16)) / 255
         default:
             alpha = 0
         }

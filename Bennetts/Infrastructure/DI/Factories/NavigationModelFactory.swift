@@ -6,6 +6,5 @@
 //
 
 protocol NavigationModelFactory {
-
     func makeNavigationModel() -> NavigationModel
 }

@@ -8,7 +8,6 @@
 import Foundation
 
 struct UnsplashRouter<EndPoint: EndPointType> {
-
     private let session: URLSession
     private let decoder: JSONDecoder
 
@@ -18,7 +17,6 @@ struct UnsplashRouter<EndPoint: EndPointType> {
     }
 
     func request<T: Decodable>(_ route: EndPoint, queryItems: [URLQueryItem]? = nil) async throws -> T {
-
         guard let url = route.makeComponent(queryItems: queryItems).url else {
             throw UnsplashRemoteAPIError.createURL
         }
@@ -29,7 +27,7 @@ struct UnsplashRouter<EndPoint: EndPointType> {
             throw UnsplashRemoteAPIError.response
         }
 
-        guard 200..<300 ~= httpResponse.statusCode else {
+        guard 200 ..< 300 ~= httpResponse.statusCode else {
             throw UnsplashRemoteAPIError.httpError
         }
 

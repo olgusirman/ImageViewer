@@ -5,11 +5,10 @@
 //  Created by Olgu SIRMAN on 10/08/2023.
 //
 
-import XCTest
 @testable import Bennetts
+import XCTest
 
 final class UnsplashRemoteAPITests: XCTestCase {
-
     var stub: UnsplashRemoteAPI!
 
     override func setUpWithError() throws {
@@ -24,6 +23,5 @@ final class UnsplashRemoteAPITests: XCTestCase {
         let images = try await stub.fetchImages()
 
         XCTAssertEqual(images.first?.user.name, "Olgu SIRMAN")
-
     }
 }

@@ -6,11 +6,9 @@
 //
 
 import SwiftUI
-import SwiftData
 
 @main
 struct BennettsApp: App {
-
     private var dependencyContainer = AppDependencyContainer()
 
     var body: some Scene {

@@ -5,11 +5,10 @@
 //  Created by Olgu SIRMAN on 10/08/2023.
 //
 
-import XCTest
 @testable import Bennetts
+import XCTest
 
 final class UnsplashEndpointTypeTests: XCTestCase {
-
     var stub: UnsplashEndpointType!
 
     override func setUpWithError() throws {
@@ -21,7 +20,6 @@ final class UnsplashEndpointTypeTests: XCTestCase {
     }
 
     func testEndpointType_whenConfigureWithoutQueryItems_expectCorrectUrl() async throws {
-
         // when
         let components = stub.makeComponent(queryItems: nil)
 
@@ -30,7 +28,6 @@ final class UnsplashEndpointTypeTests: XCTestCase {
     }
 
     func testEndpointType_whenConfigureWithQueryItems_expectCorrectUrl() async throws {
-
         let queryItems = [URLQueryItem(name: "client_id", value: "1234")]
 
         // when

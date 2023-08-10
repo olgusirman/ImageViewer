@@ -26,8 +26,8 @@ struct FeedImageView: View {
                 ImageContentDescriptionView(userDisplayName: image.user.displayName,
                                             userProfileImage: image.user.profileImage[.small],
                                             likeCount: image.user.totalLikes)
-                .padding([.bottom], 40)
-                .background(Material.thinMaterial)
+                    .padding([.bottom], 40)
+                    .background(Material.thinMaterial)
             }
         }
     }

@@ -5,8 +5,8 @@
 //  Created by Olgu SIRMAN on 10/08/2023.
 //
 
-import Foundation
 @testable import Bennetts
+import Foundation
 
 enum UnsplashMockEndpointType: EndPointType {
     case photos

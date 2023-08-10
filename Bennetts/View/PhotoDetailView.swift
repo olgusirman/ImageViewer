@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct PhotoDetailView: View {
-
     // MARK: - Constructor
+
     var photo: UnsplashPhoto
 
     // MARK: - Private Properties
+
     private var user: UnsplashUser {
         photo.user
     }
@@ -82,7 +83,7 @@ struct PhotoDetailView: View {
                         .font(.title)
                         .accessibilityIdentifier("username")
                 }
-                if let portfolioURL = user.portfolioURL?.absoluteString  {
+                if let portfolioURL = user.portfolioURL?.absoluteString {
                     HStack {
                         Text(portfolioURL)
                             .font(.body)

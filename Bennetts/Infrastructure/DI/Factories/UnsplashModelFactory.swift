@@ -6,6 +6,5 @@
 //
 
 protocol UnsplashModelFactory {
-
     func makeUnsplashModel() -> UnsplashModel
 }

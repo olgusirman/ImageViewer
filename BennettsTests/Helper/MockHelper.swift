@@ -5,11 +5,10 @@
 //  Created by Olgu SIRMAN on 10/08/2023.
 //
 
-import Foundation
 @testable import Bennetts
+import Foundation
 
 extension Array {
-
     private static var mockJsonName: String {
         "mockUnsplashPhoto.json"
     }

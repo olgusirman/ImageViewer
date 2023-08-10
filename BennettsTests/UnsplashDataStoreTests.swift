@@ -5,11 +5,10 @@
 //  Created by Olgu SIRMAN on 10/08/2023.
 //
 
-import XCTest
 @testable import Bennetts
+import XCTest
 
 final class UnsplashDataStoreTests: XCTestCase {
-
     var stub: UnsplashDataStore!
 
     override func setUpWithError() throws {
@@ -21,7 +20,6 @@ final class UnsplashDataStoreTests: XCTestCase {
     }
 
     func testDataStore_whenSaveAndGetImages_getCorrectValue() async throws {
-
         // Given
         let photos: [Bennetts.UnsplashPhoto] = .mockDataStorePhotos
 

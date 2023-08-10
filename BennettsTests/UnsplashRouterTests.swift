@@ -5,11 +5,10 @@
 //  Created by Olgu SIRMAN on 10/08/2023.
 //
 
-import XCTest
 @testable import Bennetts
+import XCTest
 
 final class UnsplashRouterTests: XCTestCase {
-
     var stub: UnsplashRouter<UnsplashMockEndpointType>!
     var urlSession: URLSession!
     var url: URL!
@@ -17,7 +16,6 @@ final class UnsplashRouterTests: XCTestCase {
     var encoder: JSONEncoder!
 
     override func setUpWithError() throws {
-
         URLProtocol.registerClass(TestURLProtocol.self)
 
         decoder = JSONDecoder()
@@ -41,12 +39,11 @@ final class UnsplashRouterTests: XCTestCase {
     }
 
     func testRouter_whenRequestCalled_emitCorrectValues() async throws {
-
         let mock: [Bennetts.UnsplashPhoto] = .mockRemoteAPIPhotos
         let mockData = try JSONEncoder().encode(mock)
 
-        TestURLProtocol.mockResponses[url] = { request in
-            return (result: .success(mockData), statusCode: 200)
+        TestURLProtocol.mockResponses[url] = { _ in
+            (result: .success(mockData), statusCode: 200)
         }
 
         let photo: [UnsplashPhoto] = try await stub.request(.photos)
@@ -55,12 +52,11 @@ final class UnsplashRouterTests: XCTestCase {
     }
 
     func testRouter_whenResponseStatusCodeInvalid_emitCorrectError() async throws {
-
         let mock: [Bennetts.UnsplashPhoto] = .mockRemoteAPIPhotos
         let mockData = try JSONEncoder().encode(mock)
 
-        TestURLProtocol.mockResponses[url] = { request in
-            return (result: .success(mockData), statusCode: 200)
+        TestURLProtocol.mockResponses[url] = { _ in
+            (result: .success(mockData), statusCode: 200)
         }
 
         struct MockDecodingErrorObject: Decodable {}
@@ -71,6 +67,5 @@ final class UnsplashRouterTests: XCTestCase {
         } catch {
             XCTAssertEqual(error as! UnsplashRemoteAPIError, UnsplashRemoteAPIError.decoding)
         }
-
     }
 }

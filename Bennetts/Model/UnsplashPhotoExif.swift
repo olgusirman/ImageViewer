@@ -8,7 +8,6 @@
 import Foundation
 
 public struct UnsplashPhotoExif: Codable {
-
     public let aperture: String
     public let exposureTime: String
     public let focalLength: String
@@ -24,5 +23,4 @@ public struct UnsplashPhotoExif: Codable {
         case make
         case model
     }
-
 }

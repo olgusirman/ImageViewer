@@ -6,6 +6,5 @@
 //
 
 protocol UnsplashRepository {
-
     func getImages() async throws -> [UnsplashPhoto]
 }

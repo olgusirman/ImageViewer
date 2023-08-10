@@ -15,7 +15,6 @@ enum UnsplashRemoteAPIError: Error {
 }
 
 extension UnsplashRemoteAPIError: CustomStringConvertible {
-
     var description: String {
         switch self {
         case .unknown:
