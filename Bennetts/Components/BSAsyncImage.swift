@@ -6,29 +6,15 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct BSAsyncImage: View {
     let url: URL?
-
+    
     var body: some View {
-        AsyncImage(
-            url: url,
-            transaction: Transaction(animation: .easeInOut)
-        ) { phase in
-            switch phase {
-            case .empty:
-                ProgressView()
-            case .success(let image):
-                image
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .background(Color.secondary)
-            case .failure:
-                Image(systemName: "photo.fill")
-            @unknown default:
-                EmptyView()
-            }
-        }
+        KFImage(url)
+            .resizable()
+            .aspectRatio(contentMode: .fit)
     }
 }
 
