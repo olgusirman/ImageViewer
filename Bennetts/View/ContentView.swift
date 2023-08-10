@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import SwiftData
 
 struct ContentView: View {
 
@@ -57,7 +56,8 @@ struct ContentView: View {
             })
         }
         .task {
-            guard model.imageFeed.isEmpty else { return }
+
+            guard model.imageFeed.isEmpty, ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] == nil else { return }
             do {
                 try await model.loadImages()
             } catch {
@@ -70,8 +70,4 @@ struct ContentView: View {
             Text(lastErrorMessage)
         })
     }
-}
-
-#Preview {
-    ContentView()
 }
