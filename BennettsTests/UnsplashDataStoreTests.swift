@@ -20,7 +20,7 @@ final class UnsplashDataStoreTests: XCTestCase {
         stub = nil
     }
 
-    func testSaveAndGetImages() async throws {
+    func testDataStore_whenSaveAndGetImages_getCorrectValue() async throws {
 
         // Given
         let photos: [Bennetts.UnsplashPhoto] = .mockDataStorePhotos
