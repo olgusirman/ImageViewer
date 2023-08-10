@@ -11,6 +11,9 @@ public class AppDependencyContainer {
 
     // MARK: Long-lived dependencies
     private let configProvider: ConfigProvider
+    private let encoder = JSONEncoder()
+    private let decoder = JSONDecoder()
+    private let fileManager = FileManager.default
 
     // MARK: Init
     public init() {
@@ -26,7 +29,7 @@ public class AppDependencyContainer {
     }
 
     func makeUnsplashDataStore() -> UnsplashDataStore {
-        FileUnsplashDataStore()
+        FileUnsplashDataStore(fileManager: fileManager, encoder: encoder, decoder: decoder)
     }
 }
 
