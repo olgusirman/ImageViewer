@@ -1,13 +1,14 @@
 //
-//  ImageContentView.swift
+//  ContentView.swift
 //  Bennetts
 //
 //  Created by Olgu SIRMAN on 08/08/2023.
 //
 
 import SwiftUI
+import SwiftData
 
-struct ImageContentView: View {
+struct ContentView: View {
 
     @EnvironmentObject var model: UnsplashModel
     @EnvironmentObject var navigationModel: NavigationModel
@@ -69,4 +70,8 @@ struct ImageContentView: View {
             Text(lastErrorMessage)
         })
     }
+}
+
+#Preview {
+    ContentView()
 }
