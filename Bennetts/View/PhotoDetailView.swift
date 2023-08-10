@@ -9,8 +9,10 @@ import SwiftUI
 
 struct PhotoDetailView: View {
 
+    // MARK: - Constructor
     var photo: UnsplashPhoto
 
+    // MARK: - Private Properties
     private var user: UnsplashUser {
         photo.user
     }
@@ -24,6 +26,8 @@ struct PhotoDetailView: View {
     private var isPhotoRatioSupportsLandscape: Bool {
         photo.width / photo.height > 1
     }
+
+    // MARK: - Views
 
     var bannerView: some View {
         AsyncImage(

@@ -27,22 +27,7 @@ struct ContentView: View {
                 ScrollView(.horizontal) {
                     HStack(spacing: 0) {
                         ForEach(model.imageFeed) { image in
-                            ZStack {
-                                NavigationLink(value: image) {
-                                    BSAsyncImage(url: image.urls[.regular])
-                                        .frame(
-                                            maxWidth: geometry.size.width
-                                        )
-                                }
-                                VStack {
-                                    Spacer()
-                                    ImageContentDescriptionView(userDisplayName: image.user.displayName,
-                                                                userProfileImage: image.user.profileImage[.small],
-                                                                likeCount: image.user.totalLikes)
-                                    .padding([.bottom], 40)
-                                    .background(Material.thinMaterial)
-                                }
-                            }
+                            FeedImageView(image: image, maxWidth: geometry.size.width)
                         }
                     }
                     .scrollTargetLayout()
