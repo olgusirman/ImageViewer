@@ -12,7 +12,6 @@ struct UnsplashConfig: CredentialProvider {
         if let clientId = Bundle.main.infoDictionary?["CLIENT_ID"] as? String {
             return clientId
         }
-        assert(true, "Please provide a Unsplash clientId on Config file")
-        return ""
+        preconditionFailure("Please provide a Unsplash clientId on Config file")
     }
 }
