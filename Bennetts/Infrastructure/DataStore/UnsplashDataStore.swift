@@ -10,5 +10,5 @@ import Foundation
 protocol UnsplashDataStore {
     func saveImages(images: [UnsplashPhoto]) async throws
     func getImages() async throws -> [UnsplashPhoto]
+    func deleteAllImages() async throws
 }
-

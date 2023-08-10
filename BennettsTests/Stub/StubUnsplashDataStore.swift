@@ -19,4 +19,8 @@ final class StubUnsplashDataStore: UnsplashDataStore {
     func getImages() async throws -> [UnsplashPhoto] {
         images
     }
+
+    func deleteAllImages() async throws {
+        images.removeAll()
+    }
 }
