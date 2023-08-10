@@ -11,7 +11,7 @@
 		C96E934F2A84FE9F00F0D633 /* UnsplashRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96E934E2A84FE9F00F0D633 /* UnsplashRepository.swift */; };
 		C96E93512A84FEB400F0D633 /* UnsplashRemoteAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96E93502A84FEB400F0D633 /* UnsplashRemoteAPI.swift */; };
 		C96E93542A84FFC000F0D633 /* UnsplashDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96E93532A84FFC000F0D633 /* UnsplashDataStore.swift */; };
-		C96E93562A85027500F0D633 /* FileUnsplashDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96E93552A85027500F0D633 /* FileUnsplashDataStore.swift */; };
+		C96E93562A85027500F0D633 /* FileUnsplashCareTaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96E93552A85027500F0D633 /* FileUnsplashCareTaker.swift */; };
 		C96E93582A85035400F0D633 /* UnsplashRepositoryProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96E93572A85035400F0D633 /* UnsplashRepositoryProvider.swift */; };
 		C96E935A2A850C6E00F0D633 /* UnsplashRemoteAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96E93592A850C6E00F0D633 /* UnsplashRemoteAPIError.swift */; };
 		C96E935D2A851B1200F0D633 /* UnsplashModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96E935C2A851B1200F0D633 /* UnsplashModelFactory.swift */; };
@@ -31,6 +31,7 @@
 		C96E937E2A85301D00F0D633 /* InputStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96E937D2A85301D00F0D633 /* InputStream.swift */; };
 		C96E93802A85330000F0D633 /* UnsplashRemoteAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96E937F2A85330000F0D633 /* UnsplashRemoteAPITests.swift */; };
 		C96E93822A8533E000F0D633 /* UnsplashDataStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96E93812A8533E000F0D633 /* UnsplashDataStoreTests.swift */; };
+		C96E93852A854D7D00F0D633 /* FileUnsplashCareTakerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96E93842A854D7D00F0D633 /* FileUnsplashCareTakerTests.swift */; };
 		C98F19B92A82CC6B002BF99F /* BennettsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98F19B82A82CC6B002BF99F /* BennettsApp.swift */; };
 		C98F19BB2A82CC6B002BF99F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98F19BA2A82CC6B002BF99F /* ContentView.swift */; };
 		C98F19BF2A82CC6E002BF99F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C98F19BE2A82CC6E002BF99F /* Assets.xcassets */; };
@@ -80,7 +81,7 @@
 		C96E934E2A84FE9F00F0D633 /* UnsplashRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashRepository.swift; sourceTree = "<group>"; };
 		C96E93502A84FEB400F0D633 /* UnsplashRemoteAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashRemoteAPI.swift; sourceTree = "<group>"; };
 		C96E93532A84FFC000F0D633 /* UnsplashDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashDataStore.swift; sourceTree = "<group>"; };
-		C96E93552A85027500F0D633 /* FileUnsplashDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUnsplashDataStore.swift; sourceTree = "<group>"; };
+		C96E93552A85027500F0D633 /* FileUnsplashCareTaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUnsplashCareTaker.swift; sourceTree = "<group>"; };
 		C96E93572A85035400F0D633 /* UnsplashRepositoryProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashRepositoryProvider.swift; sourceTree = "<group>"; };
 		C96E93592A850C6E00F0D633 /* UnsplashRemoteAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashRemoteAPIError.swift; sourceTree = "<group>"; };
 		C96E935C2A851B1200F0D633 /* UnsplashModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashModelFactory.swift; sourceTree = "<group>"; };
@@ -101,6 +102,7 @@
 		C96E937F2A85330000F0D633 /* UnsplashRemoteAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashRemoteAPITests.swift; sourceTree = "<group>"; };
 		C96E93812A8533E000F0D633 /* UnsplashDataStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashDataStoreTests.swift; sourceTree = "<group>"; };
 		C96E93832A85490500F0D633 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		C96E93842A854D7D00F0D633 /* FileUnsplashCareTakerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUnsplashCareTakerTests.swift; sourceTree = "<group>"; };
 		C98F19B52A82CC6B002BF99F /* Bennetts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bennetts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C98F19B82A82CC6B002BF99F /* BennettsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BennettsApp.swift; sourceTree = "<group>"; };
 		C98F19BA2A82CC6B002BF99F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -188,7 +190,7 @@
 		C96E93522A84FFB900F0D633 /* DataStore */ = {
 			isa = PBXGroup;
 			children = (
-				C96E93552A85027500F0D633 /* FileUnsplashDataStore.swift */,
+				C96E93552A85027500F0D633 /* FileUnsplashCareTaker.swift */,
 				C96E93532A84FFC000F0D633 /* UnsplashDataStore.swift */,
 			);
 			path = DataStore;
@@ -312,6 +314,7 @@
 				C96E93712A85266100F0D633 /* Helper */,
 				C96E936C2A85256C00F0D633 /* Stub */,
 				C96E937A2A852FFA00F0D633 /* Utility */,
+				C96E93842A854D7D00F0D633 /* FileUnsplashCareTakerTests.swift */,
 			);
 			path = BennettsTests;
 			sourceTree = "<group>";
@@ -514,7 +517,7 @@
 				C99E37BC2A8409D900094B12 /* TotalPhotosCountView.swift in Sources */,
 				C96E935F2A851B2700F0D633 /* NavigationModelFactory.swift in Sources */,
 				C96E93542A84FFC000F0D633 /* UnsplashDataStore.swift in Sources */,
-				C96E93562A85027500F0D633 /* FileUnsplashDataStore.swift in Sources */,
+				C96E93562A85027500F0D633 /* FileUnsplashCareTaker.swift in Sources */,
 				C98F19F62A83009A002BF99F /* ProfileImageView.swift in Sources */,
 				C98F19F82A8300BF002BF99F /* LikeCountView.swift in Sources */,
 				C98F19F42A82F85B002BF99F /* URL+.swift in Sources */,
@@ -559,6 +562,7 @@
 				C96E937C2A85300700F0D633 /* TestURLProtocol.swift in Sources */,
 				C96E936B2A85253F00F0D633 /* UnsplashRepositoryTests.swift in Sources */,
 				C96E93802A85330000F0D633 /* UnsplashRemoteAPITests.swift in Sources */,
+				C96E93852A854D7D00F0D633 /* FileUnsplashCareTakerTests.swift in Sources */,
 				C96E93822A8533E000F0D633 /* UnsplashDataStoreTests.swift in Sources */,
 				C96E93792A852B9600F0D633 /* StubUnsplashRemoteAPI.swift in Sources */,
 			);

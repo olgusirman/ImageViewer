@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class FileUnsplashDataStore: UnsplashDataStore {
+public class FileUnsplashCareTaker: UnsplashDataStore {
 
     enum UnsplashDataStoreError: Error {
         case noDocumentDirectory
@@ -27,7 +27,7 @@ public class FileUnsplashDataStore: UnsplashDataStore {
     private let path = "unsplashImages.json"
 
     // MARK: - Methods
-    public init(fileManager: FileManager = .default, encoder: JSONEncoder, decoder: JSONDecoder) {
+    public init(fileManager: FileManager, encoder: JSONEncoder, decoder: JSONDecoder) {
         self.fileManager = fileManager
         self.encoder = encoder
         self.decoder = decoder
@@ -50,8 +50,7 @@ public class FileUnsplashDataStore: UnsplashDataStore {
         guard let jsonData = try? Data(contentsOf: docsURL.appendingPathComponent(path)) else {
             throw UnsplashDataStoreError.noData
         }
-        let photos = try! decoder.decode([UnsplashPhoto].self, from: jsonData)
-        return photos
+        return try decoder.decode([UnsplashPhoto].self, from: jsonData)
     }
 
     func deleteAllImages() async throws {

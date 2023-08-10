@@ -29,7 +29,7 @@ public class AppDependencyContainer {
     }
 
     func makeUnsplashDataStore() -> UnsplashDataStore {
-        FileUnsplashDataStore(fileManager: fileManager, encoder: encoder, decoder: decoder)
+        FileUnsplashCareTaker(fileManager: fileManager, encoder: encoder, decoder: decoder)
     }
 }
 
