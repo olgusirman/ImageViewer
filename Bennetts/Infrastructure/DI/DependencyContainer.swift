@@ -14,16 +14,18 @@ public class AppDependencyContainer {
     private let encoder = JSONEncoder()
     private let decoder = JSONDecoder()
     private let fileManager = FileManager.default
+    private let session: URLSession
 
     // MARK: Init
     public init() {
+        session = URLSession(configuration: .default)
         configProvider = ConfigManager()
     }
 
     // MARK: Inject Dependencies
     func makeUnsplashRepository() -> UnsplashRepository {
         let unsplashDataStore = makeUnsplashDataStore()
-        let remoteAPI = UnsplashRemoteAPIProvider(configProvider: configProvider)
+        let remoteAPI = UnsplashRemoteAPIProvider(configProvider: configProvider, session: session)
 
         return UnsplashRepositoryProvider(dataStore: unsplashDataStore, remoteAPI: remoteAPI)
     }

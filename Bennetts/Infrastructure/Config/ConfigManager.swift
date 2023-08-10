@@ -8,12 +8,12 @@
 final public class ConfigManager: ConfigProvider {
 
     public enum ConfigType {
-        case clientId
+        case network
     }
 
     public func getConfig(type: ConfigType) -> CredentialProvider {
         switch type {
-        case .clientId:
+        case .network:
             return UnsplashConfig()
         }
     }
