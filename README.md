@@ -46,8 +46,8 @@ This project demonstrates the use of the latest SwiftUI framework to create an i
 
 ## Screenshots
 
-![Screenshot 1](screenshots/screenshot1.png)
-![Screenshot 2](screenshots/screenshot2.png)
+![Screenshot 1](screenshots/feed.png)
+![Screenshot 2](screenshots/photoDetail.png)
 
 ## Contact
 
@@ -62,4 +62,4 @@ This project is licensed under the [MIT License](LICENSE).
 
 ---
 
-*Note: This README is a template and may not reflect the actual details of the ImageViewer project for Bennets.*
+_Note: This README is a template and may not reflect the actual details of the ImageViewer project for Bennets._
