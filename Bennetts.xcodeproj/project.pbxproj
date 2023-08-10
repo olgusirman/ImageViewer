@@ -38,6 +38,8 @@
 		C96E93AE2A85692900F0D633 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96E93AD2A85692900F0D633 /* HTTPMethod.swift */; };
 		C96E93B02A85694500F0D633 /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96E93AF2A85694500F0D633 /* HTTPTask.swift */; };
 		C96E93B22A85697A00F0D633 /* UnsplashRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96E93B12A85697A00F0D633 /* UnsplashRouter.swift */; };
+		C96E93B42A85711D00F0D633 /* UnsplashRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96E93B32A85711D00F0D633 /* UnsplashRouterTests.swift */; };
+		C96E93B62A85715D00F0D633 /* UnsplashEndpointTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96E93B52A85715D00F0D633 /* UnsplashEndpointTypeTests.swift */; };
 		C98F19B92A82CC6B002BF99F /* BennettsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98F19B82A82CC6B002BF99F /* BennettsApp.swift */; };
 		C98F19BB2A82CC6B002BF99F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98F19BA2A82CC6B002BF99F /* ContentView.swift */; };
 		C98F19BF2A82CC6E002BF99F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C98F19BE2A82CC6E002BF99F /* Assets.xcassets */; };
@@ -114,6 +116,8 @@
 		C96E93AD2A85692900F0D633 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		C96E93AF2A85694500F0D633 /* HTTPTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPTask.swift; sourceTree = "<group>"; };
 		C96E93B12A85697A00F0D633 /* UnsplashRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashRouter.swift; sourceTree = "<group>"; };
+		C96E93B32A85711D00F0D633 /* UnsplashRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashRouterTests.swift; sourceTree = "<group>"; };
+		C96E93B52A85715D00F0D633 /* UnsplashEndpointTypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashEndpointTypeTests.swift; sourceTree = "<group>"; };
 		C98F19B52A82CC6B002BF99F /* Bennetts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bennetts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C98F19B82A82CC6B002BF99F /* BennettsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BennettsApp.swift; sourceTree = "<group>"; };
 		C98F19BA2A82CC6B002BF99F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -340,12 +344,14 @@
 			children = (
 				C96E93842A854D7D00F0D633 /* FileUnsplashCareTakerTests.swift */,
 				C96E93812A8533E000F0D633 /* UnsplashDataStoreTests.swift */,
+				C96E93B52A85715D00F0D633 /* UnsplashEndpointTypeTests.swift */,
+				C96E93862A85595D00F0D633 /* UnsplashModelTests.swift */,
 				C96E937F2A85330000F0D633 /* UnsplashRemoteAPITests.swift */,
 				C96E936A2A85253F00F0D633 /* UnsplashRepositoryTests.swift */,
+				C96E93B32A85711D00F0D633 /* UnsplashRouterTests.swift */,
 				C96E93712A85266100F0D633 /* Helper */,
 				C96E936C2A85256C00F0D633 /* Stub */,
 				C96E937A2A852FFA00F0D633 /* Utility */,
-				C96E93862A85595D00F0D633 /* UnsplashModelTests.swift */,
 			);
 			path = BennettsTests;
 			sourceTree = "<group>";
@@ -589,7 +595,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C96E93B42A85711D00F0D633 /* UnsplashRouterTests.swift in Sources */,
 				C96E93752A85286E00F0D633 /* MockHelper.swift in Sources */,
+				C96E93B62A85715D00F0D633 /* UnsplashEndpointTypeTests.swift in Sources */,
 				C96E93872A85595D00F0D633 /* UnsplashModelTests.swift in Sources */,
 				C96E93732A85266700F0D633 /* DecodeHelper.swift in Sources */,
 				C96E93772A852B8E00F0D633 /* StubUnsplashDataStore.swift in Sources */,
