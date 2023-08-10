@@ -10,8 +10,6 @@ import Foundation
 
 final class StubUnsplashRemoteAPI: UnsplashRemoteAPI {
 
-    typealias UnsplashRemoteAPIContinuation = CheckedContinuation<[UnsplashPhoto], Error>
-
     func fetchImages() async throws -> [UnsplashPhoto] {
 
         let photos: [UnsplashPhoto] = try await withCheckedThrowingContinuation { continuation in
