@@ -33,4 +33,20 @@ final class UnsplashDataStoreTests: XCTestCase {
 
         XCTAssertEqual(images.first?.user.name, "Sergey Kotenev")
     }
+
+    func testDataStore_whenDeleteImages_getCorrectError() async throws {
+        // Given
+        let images: [Bennetts.UnsplashPhoto] = .mockDataStorePhotos
+
+        // When
+        try await stub.saveImages(images: images)
+        try await stub.deleteAllImages()
+
+        do {
+            _ = try await stub.getImages()
+        } catch {
+            // Then
+            XCTAssertEqual(error as! FileUnsplashCareTaker.UnsplashDataStoreError, FileUnsplashCareTaker.UnsplashDataStoreError.noData)
+        }
+    }
 }
