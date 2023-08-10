@@ -10,13 +10,17 @@ import Foundation
 actor UnsplashModel: ObservableObject {
     @Published @MainActor private(set) var imageFeed: [UnsplashPhoto] = []
 
-    static let clientId = "xg4tYnJNff0NN4Gf5cK2gbbNHBF6T-3N5QOm2RT-p1I"
+    private let clientId: String
+
+    init(configProvider: ConfigProvider) {
+        clientId = configProvider.getConfig(type: .clientId).clientID
+    }
 
     nonisolated func loadImages() async throws {
         await MainActor.run {
             imageFeed.removeAll()
         }
-        guard let url = URL(string: "https://api.unsplash.com/photos/?client_id=\(Self.clientId)") else {
+        guard let url = URL(string: "https://api.unsplash.com/photos/?client_id=\(clientId)") else {
             throw "Could not create endpoint URL"
         }
         let (data, response) = try await URLSession.shared.data(from: url, delegate: nil)

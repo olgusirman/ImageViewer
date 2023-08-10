@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C96E93442A84F57C00F0D633 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96E93432A84F57C00F0D633 /* DependencyContainer.swift */; };
+		C96E93472A84FB7C00F0D633 /* ConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96E93462A84FB7C00F0D633 /* ConfigManager.swift */; };
+		C96E93492A84FC5A00F0D633 /* UnsplashConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96E93482A84FC5A00F0D633 /* UnsplashConfig.swift */; };
+		C96E934B2A84FCA000F0D633 /* CredentialProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96E934A2A84FCA000F0D633 /* CredentialProvider.swift */; };
+		C96E934D2A84FCEF00F0D633 /* ConfigProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96E934C2A84FCEF00F0D633 /* ConfigProvider.swift */; };
 		C98F19B92A82CC6B002BF99F /* BennettsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98F19B82A82CC6B002BF99F /* BennettsApp.swift */; };
 		C98F19BB2A82CC6B002BF99F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98F19BA2A82CC6B002BF99F /* ContentView.swift */; };
 		C98F19BF2A82CC6E002BF99F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C98F19BE2A82CC6E002BF99F /* Assets.xcassets */; };
@@ -53,6 +58,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C96E93432A84F57C00F0D633 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
+		C96E93462A84FB7C00F0D633 /* ConfigManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigManager.swift; sourceTree = "<group>"; };
+		C96E93482A84FC5A00F0D633 /* UnsplashConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashConfig.swift; sourceTree = "<group>"; };
+		C96E934A2A84FCA000F0D633 /* CredentialProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialProvider.swift; sourceTree = "<group>"; };
+		C96E934C2A84FCEF00F0D633 /* ConfigProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigProvider.swift; sourceTree = "<group>"; };
 		C98F19B52A82CC6B002BF99F /* Bennetts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bennetts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C98F19B82A82CC6B002BF99F /* BennettsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BennettsApp.swift; sourceTree = "<group>"; };
 		C98F19BA2A82CC6B002BF99F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -111,6 +121,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C96E933F2A84F4FB00F0D633 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		C96E93402A84F52D00F0D633 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				C96E93432A84F57C00F0D633 /* DependencyContainer.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		C96E93412A84F53400F0D633 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		C96E93422A84F53900F0D633 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		C96E93452A84FB7300F0D633 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				C96E93462A84FB7C00F0D633 /* ConfigManager.swift */,
+				C96E934C2A84FCEF00F0D633 /* ConfigProvider.swift */,
+				C96E934A2A84FCA000F0D633 /* CredentialProvider.swift */,
+				C96E93482A84FC5A00F0D633 /* UnsplashConfig.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
 		C98F19AC2A82CC6B002BF99F = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +184,11 @@
 		C98F19B72A82CC6B002BF99F /* Bennetts */ = {
 			isa = PBXGroup;
 			children = (
+				C96E93452A84FB7300F0D633 /* Config */,
+				C96E93422A84F53900F0D633 /* UI */,
+				C96E93412A84F53400F0D633 /* Repository */,
+				C96E93402A84F52D00F0D633 /* DI */,
+				C96E933F2A84F4FB00F0D633 /* Network */,
 				C98F19C32A82CC6E002BF99F /* Bennetts.entitlements */,
 				C98F19C42A82CC6E002BF99F /* Info.plist */,
 				C98F19B82A82CC6B002BF99F /* BennettsApp.swift */,
@@ -358,12 +413,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C96E934B2A84FCA000F0D633 /* CredentialProvider.swift in Sources */,
+				C96E93472A84FB7C00F0D633 /* ConfigManager.swift in Sources */,
 				C98F1A102A83C604002BF99F /* Int+.swift in Sources */,
 				C99E37BC2A8409D900094B12 /* TotalPhotosCountView.swift in Sources */,
 				C98F19F62A83009A002BF99F /* ProfileImageView.swift in Sources */,
 				C98F19F82A8300BF002BF99F /* LikeCountView.swift in Sources */,
 				C98F19F42A82F85B002BF99F /* URL+.swift in Sources */,
 				C98F1A122A83D173002BF99F /* View+.swift in Sources */,
+				C96E934D2A84FCEF00F0D633 /* ConfigProvider.swift in Sources */,
 				C98F19BB2A82CC6B002BF99F /* ContentView.swift in Sources */,
 				C98F19E82A82CE27002BF99F /* ImageContentView.swift in Sources */,
 				C98F1A072A83A38F002BF99F /* UnsplashModel.swift in Sources */,
@@ -374,7 +432,9 @@
 				C99E37B72A83F5DF00094B12 /* PhotoDetailView.swift in Sources */,
 				C98F19EB2A82F57C002BF99F /* BSAsyncImage.swift in Sources */,
 				C98F1A022A8302E9002BF99F /* Color+.swift in Sources */,
+				C96E93442A84F57C00F0D633 /* DependencyContainer.swift in Sources */,
 				C98F1A0E2A83C046002BF99F /* ImageContentDescriptionView.swift in Sources */,
+				C96E93492A84FC5A00F0D633 /* UnsplashConfig.swift in Sources */,
 				C98F1A0C2A83B59A002BF99F /* KeyedDecodingContainer+.swift in Sources */,
 				C98F19FC2A8301F8002BF99F /* UnsplashPhoto.swift in Sources */,
 				C98F1A092A83A3EF002BF99F /* String+.swift in Sources */,
