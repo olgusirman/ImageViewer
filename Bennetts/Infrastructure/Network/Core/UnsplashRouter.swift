@@ -9,10 +9,12 @@ import Foundation
 
 struct UnsplashRouter<EndPoint: EndPointType> {
 
-    private let urlSession: URLSession
+    private let session: URLSession
+    private let decoder: JSONDecoder
 
-    public init(session: URLSession) {
-        urlSession = session
+    public init(session: URLSession, decoder: JSONDecoder) {
+        self.session = session
+        self.decoder = decoder
     }
 
     func request<T: Decodable>(_ route: EndPoint, queryItems: [URLQueryItem]? = nil) async throws -> T {
@@ -21,7 +23,7 @@ struct UnsplashRouter<EndPoint: EndPointType> {
             throw UnsplashRemoteAPIError.createURL
         }
 
-        let (data, response) = try await urlSession.data(from: url)
+        let (data, response) = try await session.data(from: url)
 
         guard let httpResponse = (response as? HTTPURLResponse) else {
             throw UnsplashRemoteAPIError.response
@@ -31,7 +33,7 @@ struct UnsplashRouter<EndPoint: EndPointType> {
             throw UnsplashRemoteAPIError.httpError
         }
 
-        guard let decodable = try? JSONDecoder().decode(T.self, from: data) else {
+        guard let decodable = try? decoder.decode(T.self, from: data) else {
             throw UnsplashRemoteAPIError.decoding
         }
 

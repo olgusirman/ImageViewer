@@ -40,6 +40,7 @@
 		C96E93B22A85697A00F0D633 /* UnsplashRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96E93B12A85697A00F0D633 /* UnsplashRouter.swift */; };
 		C96E93B42A85711D00F0D633 /* UnsplashRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96E93B32A85711D00F0D633 /* UnsplashRouterTests.swift */; };
 		C96E93B62A85715D00F0D633 /* UnsplashEndpointTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96E93B52A85715D00F0D633 /* UnsplashEndpointTypeTests.swift */; };
+		C96E93BA2A85898300F0D633 /* UnsplashMockEndpointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96E93B92A85898300F0D633 /* UnsplashMockEndpointType.swift */; };
 		C98F19B92A82CC6B002BF99F /* BennettsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98F19B82A82CC6B002BF99F /* BennettsApp.swift */; };
 		C98F19BB2A82CC6B002BF99F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98F19BA2A82CC6B002BF99F /* ContentView.swift */; };
 		C98F19BF2A82CC6E002BF99F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C98F19BE2A82CC6E002BF99F /* Assets.xcassets */; };
@@ -118,6 +119,7 @@
 		C96E93B12A85697A00F0D633 /* UnsplashRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashRouter.swift; sourceTree = "<group>"; };
 		C96E93B32A85711D00F0D633 /* UnsplashRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashRouterTests.swift; sourceTree = "<group>"; };
 		C96E93B52A85715D00F0D633 /* UnsplashEndpointTypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashEndpointTypeTests.swift; sourceTree = "<group>"; };
+		C96E93B92A85898300F0D633 /* UnsplashMockEndpointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashMockEndpointType.swift; sourceTree = "<group>"; };
 		C98F19B52A82CC6B002BF99F /* Bennetts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bennetts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C98F19B82A82CC6B002BF99F /* BennettsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BennettsApp.swift; sourceTree = "<group>"; };
 		C98F19BA2A82CC6B002BF99F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 				C96E93762A852B8E00F0D633 /* StubUnsplashDataStore.swift */,
 				C96E93782A852B9600F0D633 /* StubUnsplashRemoteAPI.swift */,
 				C96E936D2A85258100F0D633 /* StubUnsplashRepository.swift */,
+				C96E93B92A85898300F0D633 /* UnsplashMockEndpointType.swift */,
 			);
 			path = Stub;
 			sourceTree = "<group>";
@@ -607,6 +610,7 @@
 				C96E936B2A85253F00F0D633 /* UnsplashRepositoryTests.swift in Sources */,
 				C96E93802A85330000F0D633 /* UnsplashRemoteAPITests.swift in Sources */,
 				C96E93852A854D7D00F0D633 /* FileUnsplashCareTakerTests.swift in Sources */,
+				C96E93BA2A85898300F0D633 /* UnsplashMockEndpointType.swift in Sources */,
 				C96E93822A8533E000F0D633 /* UnsplashDataStoreTests.swift in Sources */,
 				C96E93792A852B9600F0D633 /* StubUnsplashRemoteAPI.swift in Sources */,
 			);
