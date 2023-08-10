@@ -38,4 +38,3 @@ struct UnsplashRouter<EndPoint: EndPointType> {
         return decodable
     }
 }
-
