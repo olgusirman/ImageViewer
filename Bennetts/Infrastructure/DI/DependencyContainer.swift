@@ -25,7 +25,9 @@ public class AppDependencyContainer {
     // MARK: Inject Dependencies
     func makeUnsplashRepository() -> UnsplashRepository {
         let unsplashDataStore = makeUnsplashDataStore()
-        let remoteAPI = UnsplashRemoteAPIProvider(configProvider: configProvider, session: session)
+        let remoteAPI = UnsplashRemoteAPIProvider(configProvider: configProvider,
+                                                  session: session,
+                                                  decoder: decoder)
 
         return UnsplashRepositoryProvider(dataStore: unsplashDataStore, remoteAPI: remoteAPI)
     }
