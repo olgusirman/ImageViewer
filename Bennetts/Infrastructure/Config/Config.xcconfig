@@ -1,0 +1,13 @@
+//
+//  Config.xcconfig
+//  Bennetts
+//
+//  Created by Olgu SIRMAN on 10/08/2023.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+/// Unsplash Client ID
+/// This file can be ignored in GIT, I used like this intentionally for test purposes
+CLIENT_ID = xg4tYnJNff0NN4Gf5cK2gbbNHBF6T-3N5QOm2RT-p1I

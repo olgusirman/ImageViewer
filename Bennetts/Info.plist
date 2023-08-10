@@ -4,5 +4,7 @@
 <dict>
 	<key>UIBackgroundModes</key>
 	<array/>
+	<key>CLIENT_ID</key>
+	<string>$(CLIENT_ID)</string>
 </dict>
 </plist>

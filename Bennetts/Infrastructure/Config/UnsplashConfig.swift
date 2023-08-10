@@ -5,8 +5,14 @@
 //  Created by Olgu SIRMAN on 10/08/2023.
 //
 
+import Foundation
+
 struct UnsplashConfig: CredentialProvider {
     var clientID: String {
-        "xg4tYnJNff0NN4Gf5cK2gbbNHBF6T-3N5QOm2RT-p1I" // FIXME: Get this as an environment variable
+        if let clientId = Bundle.main.infoDictionary?["CLIENT_ID"] as? String {
+            return clientId
+        }
+        assert(true, "Please provide a Unsplash clientId on Config file")
+        return ""
     }
 }

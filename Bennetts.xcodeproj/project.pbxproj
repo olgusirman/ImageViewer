@@ -100,6 +100,7 @@
 		C96E937D2A85301D00F0D633 /* InputStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputStream.swift; sourceTree = "<group>"; };
 		C96E937F2A85330000F0D633 /* UnsplashRemoteAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashRemoteAPITests.swift; sourceTree = "<group>"; };
 		C96E93812A8533E000F0D633 /* UnsplashDataStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashDataStoreTests.swift; sourceTree = "<group>"; };
+		C96E93832A85490500F0D633 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		C98F19B52A82CC6B002BF99F /* Bennetts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bennetts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C98F19B82A82CC6B002BF99F /* BennettsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BennettsApp.swift; sourceTree = "<group>"; };
 		C98F19BA2A82CC6B002BF99F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -218,9 +219,10 @@
 			isa = PBXGroup;
 			children = (
 				C96E93622A851ECD00F0D633 /* ConfigManager.swift */,
-				C96E93632A851ECD00F0D633 /* UnsplashConfig.swift */,
-				C96E93642A851ECD00F0D633 /* CredentialProvider.swift */,
 				C96E93652A851ECD00F0D633 /* ConfigProvider.swift */,
+				C96E93642A851ECD00F0D633 /* CredentialProvider.swift */,
+				C96E93632A851ECD00F0D633 /* UnsplashConfig.swift */,
+				C96E93832A85490500F0D633 /* Config.xcconfig */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -708,6 +710,7 @@
 		};
 		C98F19DE2A82CC6E002BF99F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C96E93832A85490500F0D633 /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
