@@ -7,49 +7,65 @@
 
 import Foundation
 
-/// A catch-all URL protocol that returns successful response and records all requests.
-class TestURLProtocol: URLProtocol {
-  static private var continuation: AsyncStream<URLRequest>.Continuation?
-  static var requests: AsyncStream<URLRequest> = {
-    AsyncStream { continuation in
-      TestURLProtocol.continuation = continuation
+public final class TestURLProtocol: URLProtocol {
+
+    public typealias MockResponse = (URLRequest) -> (
+        result: Result<Data, Error>, statusCode: Int?
+    )
+
+    public static var mockResponses: [URL: MockResponse] = [:]
+
+    public override class func canInit(with request: URLRequest) -> Bool {
+        return request.url?.absoluteString == "https://api.sirman.com/photos/"
     }
-  }()
-  static var lastRequest: URLRequest? {
-    didSet {
-      if let request = lastRequest {
-        continuation?.yield(request)
-      }
+
+    public override class func canonicalRequest(for request: URLRequest) -> URLRequest {
+        request
     }
-  }
 
-  override class func canInit(with request: URLRequest) -> Bool {
-    return true
-  }
+    public override func startLoading() {
+        guard
+            let responseBlock = TestURLProtocol.mockResponses[
+                request.url!.removingQueries
+            ]
+        else { fatalError("No mock response") }
+        let response = responseBlock(request)
 
-  override class func canonicalRequest(for request: URLRequest) -> URLRequest {
-    return request
-  }
+        if let statusCode = response.statusCode {
+            let httpURLResponse = HTTPURLResponse(
+                url: request.url!,
+                statusCode: statusCode,
+                httpVersion: nil,
+                headerFields: nil
+            )!
+            self.client?.urlProtocol(
+                self,
+                didReceive: httpURLResponse,
+                cacheStoragePolicy: .notAllowed
+            )
+        }
 
-  /// Store the URL request and send success response back to the client.
-  override func startLoading() {
-    guard let client = client,
-      let url = request.url,
-      let response = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: nil)
-      else { fatalError("Client or URL missing") }
+        switch response.result {
+        case let .success(data):
+            client?.urlProtocol(self, didLoad: data)
+            client?.urlProtocolDidFinishLoading(self)
 
-    client.urlProtocol(self, didReceive: response, cacheStoragePolicy: .notAllowed)
-    client.urlProtocol(self, didLoad: Data())
-    client.urlProtocolDidFinishLoading(self)
-
-    guard let stream = request.httpBodyStream else {
-      fatalError("Unexpected test scenario")
+        case let .failure(error):
+            client?.urlProtocol(self, didFailWithError: error)
+        }
     }
-    var request = request
-    request.httpBody = stream.data
-    Self.lastRequest = request
-  }
 
-  override func stopLoading() {
-  }
+    public override func stopLoading() {}
+}
+
+extension URL {
+    var removingQueries: URL {
+        if var components = URLComponents(string: absoluteString) {
+            components.query = nil
+            return components.url ?? self
+        }
+        else {
+            return self
+        }
+    }
 }
