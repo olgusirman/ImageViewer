@@ -24,7 +24,7 @@ struct ContentView: View {
         NavigationStack(path: $navigationModel.photoPath) {
             GeometryReader(content: { geometry in
                 ScrollView(.horizontal) {
-                    LazyHStack(spacing: 0) {
+                    HStack(spacing: 0) {
                         ForEach(model.imageFeed) { image in
                             FeedImageView(image: image, maxWidth: geometry.size.width)
                         }
